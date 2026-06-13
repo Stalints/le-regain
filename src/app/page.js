@@ -6,6 +6,7 @@ import {
   User, Star, CheckCircle, ArrowRight, Facebook, Instagram, Twitter, 
   Quote, Shield, Award, Users, MessageCircle, ZoomIn, Linkedin, Lock, Plus, Trash2
 } from 'lucide-react';
+import AppointmentModal from '@/components/ui/AppointmentModal';
 
 // --- BRAND COLORS ---
 const BRAND_TEAL = '#68a69e';
@@ -624,80 +625,6 @@ function MessageCircleIcon(props) {
     </svg>
   );
 }
-
-const AppointmentModal = ({ isOpen, onClose }) => {
-  const [submitted, setSubmitted] = useState(false);
-
-  if (!isOpen) return null;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 3000);
-  };
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-gray-900/80 backdrop-blur-sm transition-all duration-300">
-      <div className="bg-white rounded-3xl p-6 sm:p-8 w-full max-w-md relative shadow-2xl animate-in fade-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
-        <button onClick={onClose} className="absolute top-4 right-4 sm:top-5 sm:right-5 text-gray-400 hover:text-gray-800 transition-colors bg-gray-50 hover:bg-gray-100 p-2 rounded-full">
-          <X className="w-5 h-5" />
-        </button>
-        
-        {submitted ? (
-          <div className="text-center py-10 animate-in slide-in-from-bottom-4">
-            <CheckCircle className="w-20 h-20 mx-auto mb-6" color={BRAND_TEAL} />
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3" style={{ color: BRAND_GREY }}>Request Sent!</h3>
-            <p className="text-gray-600 text-sm sm:text-base">Our team will contact you shortly to confirm your appointment details.</p>
-          </div>
-        ) : (
-          <div className="animate-in slide-in-from-bottom-4 pt-2 sm:pt-0">
-            <div className="mb-6 sm:mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: BRAND_GREY }}>Book Appointment</h2>
-              <p className="text-sm text-gray-500">Take the first step towards better health and radiance.</p>
-            </div>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Clinic Branch</label>
-                <div className="relative">
-                  <select required className="w-full p-3 sm:p-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#68a69e] focus:border-transparent outline-none appearance-none transition-all text-sm sm:text-base">
-                    <option value="">Select a branch...</option>
-                    <option value="pmr">Physical Medicine & Rehab</option>
-                    <option value="skin">Hair & Skin Clinic</option>
-                  </select>
-                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">First Name</label>
-                  <input required type="text" className="w-full p-3 sm:p-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#68a69e] outline-none transition-all text-sm sm:text-base" placeholder="John" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">Last Name</label>
-                  <input required type="text" className="w-full p-3 sm:p-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#68a69e] outline-none transition-all text-sm sm:text-base" placeholder="Doe" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number</label>
-                <input required type="tel" className="w-full p-3 sm:p-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#68a69e] outline-none transition-all text-sm sm:text-base" placeholder="+1 234 567 8900" />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Preferred Date</label>
-                <input required type="date" className="w-full p-3 sm:p-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#68a69e] outline-none transition-all text-sm sm:text-base" />
-              </div>
-              <button type="submit" className="w-full py-3.5 sm:py-4 mt-6 text-white text-base sm:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5" style={{ backgroundColor: BRAND_TEAL }}>
-                Confirm Request
-              </button>
-            </form>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
 
 // --- MAIN APP ---
 
