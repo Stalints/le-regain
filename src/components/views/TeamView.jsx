@@ -4,13 +4,13 @@ import { team } from '@/data/clinicContent';
 
 export default function TeamView() {
   return (
-    <main id="team" className="bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:px-6 lg:px-8">
+    <main id="team" className="bg-[#fafafa] px-4 pb-16 pt-28 sm:px-6 sm:pt-36 lg:px-8">
       <section className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
             Doctors
           </p>
-          <h1 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold text-slate-950 sm:text-5xl">
             Meet the clinical panel at Le Regain.
           </h1>
           <p className="mt-4 text-sm leading-6 text-slate-600">
@@ -26,7 +26,7 @@ export default function TeamView() {
             return (
               <article
                 key={doctor.id}
-                className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-[2rem] border border-gray-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div
                   className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl"

@@ -5,17 +5,13 @@ import { LockKeyhole, LogIn, Mail, ShieldCheck } from 'lucide-react';
 import { BRAND_GREY, BRAND_TEAL } from '@/config/branding';
 import { clinicIdentity } from '@/data/clinicContent';
 
-const ADMIN_CREDENTIALS = {
-  email: 'admin@leregain.com',
-  password: 'regain-admin',
-};
-
 export default function AdminLogin({ onLogin }) {
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
   });
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const updateField = (field, value) => {
     setCredentials((current) => ({
@@ -25,23 +21,34 @@ export default function AdminLogin({ onLogin }) {
     setError('');
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
+    setError('');
 
-    const isValid =
-      credentials.email.trim().toLowerCase() === ADMIN_CREDENTIALS.email &&
-      credentials.password === ADMIN_CREDENTIALS.password;
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: credentials.email.trim().toLowerCase(),
+          password: credentials.password,
+        }),
+      });
 
-    if (!isValid) {
-      setError('Use admin@leregain.com and regain-admin to enter the demo dashboard.');
-      return;
+      const payload = await response.json();
+
+      if (!response.ok || !payload.success) {
+        setError(payload.error || 'Invalid email or password.');
+        return;
+      }
+
+      onLogin?.(payload.session.user);
+    } catch {
+      setError('Unable to connect. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
-
-    onLogin?.({
-      name: 'Le Regain Admin',
-      email: ADMIN_CREDENTIALS.email,
-      role: 'Operations Manager',
-    });
   };
 
   return (
@@ -68,10 +75,9 @@ export default function AdminLogin({ onLogin }) {
                 <ShieldCheck size={22} />
               </span>
               <div>
-                <p className="font-semibold text-slate-950">Demo credentials</p>
+                <p className="font-semibold text-slate-950">Secure access</p>
                 <p className="mt-1 text-sm leading-6 text-slate-600">
-                  Email: admin@leregain.com<br />
-                  Password: regain-admin
+                  Use your registered admin email and password to sign in.
                 </p>
               </div>
             </div>
@@ -112,6 +118,7 @@ export default function AdminLogin({ onLogin }) {
                   className="h-12 w-full rounded-2xl border border-slate-200 pl-12 pr-4 text-sm font-medium text-slate-700 outline-none transition-all duration-300 focus:border-transparent focus:ring-2"
                   style={{ '--tw-ring-color': BRAND_TEAL }}
                   autoComplete="email"
+                  disabled={isLoading}
                 />
               </span>
             </label>
@@ -132,6 +139,7 @@ export default function AdminLogin({ onLogin }) {
                   className="h-12 w-full rounded-2xl border border-slate-200 pl-12 pr-4 text-sm font-medium text-slate-700 outline-none transition-all duration-300 focus:border-transparent focus:ring-2"
                   style={{ '--tw-ring-color': BRAND_TEAL }}
                   autoComplete="current-password"
+                  disabled={isLoading}
                 />
               </span>
             </label>
@@ -145,11 +153,12 @@ export default function AdminLogin({ onLogin }) {
 
           <button
             type="submit"
-            className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+            disabled={isLoading}
+            className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
             style={{ backgroundColor: BRAND_TEAL }}
           >
             <LogIn size={18} aria-hidden="true" />
-            Enter Dashboard
+            {isLoading ? 'Signing in…' : 'Enter Dashboard'}
           </button>
         </form>
       </section>

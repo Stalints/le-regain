@@ -36,14 +36,22 @@ export default function PmrView({ onBookAppointment }) {
   const pmrDoctor = team.find((doctor) => doctor.division === 'PMR');
 
   return (
-    <main id="pmr-clinic" className="bg-white">
-      <section className="overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 px-4 py-20 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+    <main id="pmr-clinic" className="bg-[#fafafa]">
+      <section className="relative overflow-hidden bg-[#0a0f0e] px-4 pb-20 pt-36 text-white sm:px-6 lg:px-8">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=1920&q=85"
+            alt=""
+            className="h-full w-full object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f0e] via-[#0a0f0e]/85 to-[#0a0f0e]/35" />
+        </div>
+        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em]">
               PMR Clinic
             </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-bold leading-tight sm:text-6xl">
               Physical Medicine, pain care and rehabilitation designed around function.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-200">
@@ -69,7 +77,7 @@ export default function PmrView({ onBookAppointment }) {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+          <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
             <div className="flex items-start gap-4">
               <span
                 className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
@@ -82,28 +90,34 @@ export default function PmrView({ onBookAppointment }) {
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
                   Clinical lead
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold">{pmrDoctor?.name}</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-200">{pmrDoctor?.role}</p>
+                <h2 className="mt-2 text-2xl font-semibold">
+                  {pmrDoctor?.name ?? 'PMR Specialist'}
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-slate-200">
+                  {pmrDoctor?.role ?? 'Consultant Physiatrist & Rehabilitation Medicine'}
+                </p>
               </div>
             </div>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {pmrDoctor?.focusAreas.map((area) => (
-                <div key={area} className="rounded-2xl bg-white/10 p-3 text-sm font-medium text-slate-100">
-                  {area}
-                </div>
-              ))}
-            </div>
+            {pmrDoctor?.focusAreas?.length > 0 && (
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {pmrDoctor.focusAreas.map((area) => (
+                  <div key={area} className="rounded-2xl bg-white/10 p-3 text-sm font-medium text-slate-100">
+                    {area}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="section-shell bg-[#fafafa]">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               Non-surgical interventional approach
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
               Treatment decisions are built around pain source, movement and measurable recovery.
             </h2>
           </div>
@@ -113,7 +127,7 @@ export default function PmrView({ onBookAppointment }) {
               const Icon = item.icon;
 
               return (
-                <article key={item.title} className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm">
+                <article key={item.title} className="rounded-[2rem] border border-gray-100 bg-white p-6 shadow-sm">
                   <span
                     className="flex h-12 w-12 items-center justify-center rounded-2xl"
                     style={{ backgroundColor: 'rgba(104, 166, 158, 0.12)', color: BRAND_TEAL }}
@@ -130,14 +144,14 @@ export default function PmrView({ onBookAppointment }) {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:px-6 lg:px-8">
+      <section className="section-shell bg-white">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
                 PMR solutions
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
                 Clinical rehabilitation services mapped from assessment to return to life.
               </h2>
             </div>
@@ -153,7 +167,7 @@ export default function PmrView({ onBookAppointment }) {
               const Icon = icons[index % icons.length];
 
               return (
-                <article key={service.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <article key={service.id} className="rounded-[2rem] border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-start gap-4">
                     <span
                       className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl"
@@ -182,13 +196,13 @@ export default function PmrView({ onBookAppointment }) {
         </div>
       </section>
 
-      <section id="pmr-rehab-tracks" className="px-4 py-16 sm:px-6 lg:px-8">
+      <section id="pmr-rehab-tracks" className="section-shell bg-[#fafafa]">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               16 physical therapy sub-tracks
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
               Specialized rehabilitation tracks for distinct functional needs.
             </h2>
           </div>

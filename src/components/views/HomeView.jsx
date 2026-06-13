@@ -136,8 +136,8 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
   };
 
   return (
-    <main id="home" className="bg-white">
-      <section className="relative overflow-hidden bg-slate-950">
+    <main id="home" className="bg-[#fafafa]">
+      <section className="relative overflow-hidden bg-[#0a0f0e]">
         <div className="absolute inset-0">
           {heroSlides.map((item, index) => (
             <img
@@ -149,16 +149,16 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
               }`}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/78 to-slate-950/20" />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07100f] via-[#07100f]/78 to-[#07100f]/15" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#fafafa] to-transparent" />
         </div>
 
-        <div className="relative mx-auto grid min-h-[680px] max-w-7xl content-end px-4 pb-20 pt-28 sm:px-6 lg:px-8">
+        <div className="relative mx-auto grid min-h-[680px] max-w-7xl content-end px-4 pb-20 pt-32 sm:min-h-[760px] sm:pb-24 sm:pt-36 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
               {slide.eyebrow}
             </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
               {slide.title}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
@@ -168,7 +168,7 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
               <button
                 type="button"
                 onClick={onBookAppointment}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-full px-7 text-sm font-bold text-white shadow-[0_0_24px_rgba(104,166,158,0.35)] transition-all duration-300 hover:-translate-y-0.5"
                 style={{ backgroundColor: BRAND_TEAL }}
               >
                 <Calendar size={18} aria-hidden="true" />
@@ -177,7 +177,7 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
               <a
                 href="#locations"
                 onClick={() => setActiveView?.('locations')}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/15"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 text-sm font-bold text-white backdrop-blur transition-all duration-300 hover:bg-white/15"
               >
                 {slide.cta}
                 <ArrowRight size={18} aria-hidden="true" />
@@ -219,13 +219,13 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+      <section className="section-shell bg-[#fafafa]">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               Choose your care track
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
               Two specialist divisions, one connected clinic.
             </h2>
           </div>
@@ -235,11 +235,11 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
               const Icon = division.icon;
 
               return (
-                <a
+              <button
                   key={division.id}
-                  href={division.href}
+                  type="button"
                   onClick={() => goToDivision(division)}
-                  className="group rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="group overflow-hidden rounded-[2rem] border border-gray-100 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-left w-full"
                 >
                   <div className="flex items-start justify-between gap-5">
                     <span
@@ -259,7 +259,7 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
                     {division.subtitle}
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold text-slate-950">{division.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{division.body}</p>
+                  <p className="mt-3 text-sm leading-6 text-gray-600">{division.body}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {division.services.map((service) => (
                       <span
@@ -270,20 +270,20 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
                       </span>
                     ))}
                   </div>
-                </a>
+                </button>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:px-6 lg:px-8">
+      <section className="section-shell bg-white">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               Patient voices
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
               Care that feels coordinated from first consult to follow-up.
             </h2>
             <div className="mt-6 flex gap-3">
@@ -310,7 +310,7 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
             </div>
           </div>
 
-          <article className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+          <article className="rounded-[2rem] border border-gray-100 bg-[#f8fbfa] p-8 shadow-sm">
             <Quote size={34} style={{ color: BRAND_TEAL }} aria-hidden="true" />
             <p className="mt-5 text-xl font-medium leading-8 text-slate-800">
               "{testimonial.quote}"
@@ -339,14 +339,14 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="section-shell bg-[#fafafa]">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
                 Why choose {clinicIdentity.name}
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
                 A panel built for complete recovery and visible results.
               </h2>
               <p className="mt-4 text-sm leading-6 text-slate-600">
@@ -369,7 +369,7 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
                       <Icon size={21} />
                     </span>
                     <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">{item.body}</p>
+                    <p className="mt-2 text-sm leading-6 text-gray-600">{item.body}</p>
                   </article>
                 );
               })}

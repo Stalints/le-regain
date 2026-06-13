@@ -21,17 +21,25 @@ const cryoService = hairAndSkinClinicServices.find((service) =>
 
 export default function SkinView({ onBookAppointment }) {
   return (
-    <main id="hair-skin-clinic" className="bg-white">
-      <section className="overflow-hidden bg-gradient-to-br from-white via-slate-50 to-teal-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+    <main id="hair-skin-clinic" className="bg-[#fafafa]">
+      <section className="relative overflow-hidden bg-[#0a0f0e] px-4 pb-20 pt-36 text-white sm:px-6 lg:px-8">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1920&q=85"
+            alt=""
+            className="h-full w-full object-cover opacity-42"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f0e] via-[#0a0f0e]/82 to-[#0a0f0e]/20" />
+        </div>
+        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="inline-flex rounded-full border border-teal-100 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
+            <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
               Hair & Skin Clinic
             </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-6xl">
               Clinical dermatology, refined aesthetics and next-generation skin rituals.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-200">
               Le Regain combines dermatologist-led skin care, trichology, medical facials and
               aesthetic lasers with an emphasis on precise assessment and visible outcomes.
             </p>
@@ -47,7 +55,7 @@ export default function SkinView({ onBookAppointment }) {
               </button>
               <a
                 href="#cryo-facial"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-slate-50"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/15"
               >
                 Kerala's first Cryo Facial
               </a>
@@ -56,7 +64,7 @@ export default function SkinView({ onBookAppointment }) {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {skinDoctors.map((doctor) => (
-              <article key={doctor.id} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+              <article key={doctor.id} className="rounded-[2rem] border border-white/10 bg-white/90 p-5 shadow-2xl backdrop-blur">
                 <span
                   className="flex h-11 w-11 items-center justify-center rounded-2xl"
                   style={{ backgroundColor: 'rgba(104, 166, 158, 0.12)', color: BRAND_TEAL }}
@@ -72,13 +80,13 @@ export default function SkinView({ onBookAppointment }) {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="section-shell bg-[#fafafa]">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               Dermatology and aesthetic care
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
               Advanced services organized around diagnosis, skin health and finish.
             </h2>
           </div>
@@ -91,7 +99,7 @@ export default function SkinView({ onBookAppointment }) {
               return (
                 <article
                   key={service.id}
-                  className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm"
+                  className="rounded-[2rem] border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex items-start gap-4">
                     <span
@@ -121,8 +129,15 @@ export default function SkinView({ onBookAppointment }) {
         </div>
       </section>
 
-      <section id="cryo-facial" className="bg-slate-950 px-4 py-16 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <section id="cryo-facial" className="relative overflow-hidden bg-[#1a2b29] px-4 py-20 text-white sm:px-6 lg:px-8">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=85"
+            alt=""
+            className="h-full w-full object-cover mix-blend-overlay"
+          />
+        </div>
+        <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               Flagship treatment
@@ -174,8 +189,8 @@ export default function SkinView({ onBookAppointment }) {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 sm:p-8">
+      <section className="section-shell bg-white">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-gray-100 bg-[#f8fbfa] p-6 shadow-sm sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_GREY }}>
             Trichology emphasis
           </p>

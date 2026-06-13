@@ -16,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: #fafafa;
   color: #1f2a27;
   font-family:
     Inter,
@@ -26,6 +26,10 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+
+::selection {
+  background: rgba(104, 166, 158, 0.24);
 }
 
 a {
@@ -38,4 +42,17 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+/* ─── Layout utility used across all view components ─────────────────────── */
+@layer utilities {
+  .section-shell {
+    @apply px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24;
+  }
+}
+
+/* ─── Logo typography ─────────────────────────────────────────────────────── */
+.leregain-logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.01em;
 }

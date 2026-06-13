@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import React, { useState, useEffect } from 'react';
 import { 
   Menu, X, Phone, Mail, MapPin, Calendar, Clock, 
@@ -14,77 +14,103 @@ const BRAND_GREY = '#737976';
 // --- INITIAL DATA ---
 
 const initialTeamMembers = [
-  { 
-    id: 't1', name: "Dr. Sarah Jenkins", role: "Chief Physiatrist", category: "PMR", 
-    bio: "Specializes in neuro-rehabilitation and non-invasive pain management.",
-    img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" 
+  {
+    id: 'dr-joshy-joseph-a',
+    name: 'Dr. Joshy Joseph A.',
+    role: 'Consultant Dermatologist, Trichologist & Aesthetic Medicine Specialist',
+    category: 'SKIN',
+    bio: 'Clinical dermatology · Acne & acne scar management · Pigmentation disorders · Aesthetic dermatology · Laser-based skin procedures · Hair & scalp disorders',
+    img: null,
   },
-  { 
-    id: 't2', name: "Dr. Michael Chen", role: "Lead Dermatologist", category: "SKIN", 
-    bio: "Expert in advanced laser therapies and aesthetic skin rejuvenation.",
-    img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600" 
+  {
+    id: 'dr-shahna-mubarak-m',
+    name: 'Dr. Shahna Mubarak M.',
+    role: 'Consultant Dermatologist & Cosmetology Physician',
+    category: 'SKIN',
+    bio: 'Medical facials · Chemical peels · Hyperpigmentation treatment · Anti-ageing skin care · Dermatosurgery support · Preventive skin health',
+    img: null,
   },
-  { 
-    id: 't3', name: "Emily Rogers", role: "Senior Physical Therapist", category: "PMR", 
-    bio: "Focuses on sports injuries and post-surgical orthopedic recovery.",
-    img: "https://images.unsplash.com/photo-1594824436998-d58593aecf4a?auto=format&fit=crop&q=80&w=600" 
+  {
+    id: 'dr-minnu-jayesh',
+    name: 'Dr. Minnu Jayesh',
+    role: 'Dermatology, Hair Restoration & Aesthetic Laser Physician',
+    category: 'SKIN',
+    bio: 'Trichology · Hair fall evaluation · Scalp health · Laser hair reduction · Acne care · Skin rejuvenation protocols',
+    img: null,
   },
-  { 
-    id: 't4', name: "David Kim", role: "Occupational Therapist", category: "PMR", 
-    bio: "Dedicated to helping stroke survivors regain daily independence.",
-    img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" 
+  {
+    id: 'dr-km-mathew',
+    name: 'Dr. K M Mathew',
+    role: 'Senior Consultant in Physical Medicine & Rehabilitation',
+    category: 'PMR',
+    bio: 'Physiatry · Interventional pain management · Musculoskeletal rehabilitation · Neurorehabilitation · Multidisciplinary rehab planning',
+    img: null,
   },
-  { 
-    id: 't5', name: "Dr. Olivia Bennett", role: "Aesthetic Medicine Specialist", category: "SKIN", 
-    bio: "Specializes in bespoke cosmetic treatments and hair restoration.",
-    img: "https://images.unsplash.com/photo-1527613426401-41c9ee90a369?auto=format&fit=crop&q=80&w=600" 
+  {
+    id: 'dr-sidharth-unnithan',
+    name: 'Dr. Sidharth Unnithan',
+    role: 'Sports Medicine Specialist',
+    category: 'PMR',
+    bio: 'Sports injury diagnosis · Return-to-play planning · Ligament & tendon rehabilitation · Athletic performance · Orthopaedic rehab',
+    img: null,
   },
-  { 
-    id: 't6', name: "Dr. James Wilson", role: "Sports Medicine Physician", category: "PMR", 
-    bio: "Focuses on athletic performance optimization and injury prevention.",
-    img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600" 
-  }
+  {
+    id: 'dr-tisha-ann-babu',
+    name: 'Dr. Tisha Ann Babu',
+    role: 'Interventional Pain Management Specialist',
+    category: 'PMR',
+    bio: 'Interventional pain procedures · Chronic back pain · Sciatica & neck pain · Herniated disc management · Non-surgical pain relief',
+    img: null,
+  },
+  {
+    id: 'dr-babu-joseph',
+    name: 'Dr. Babu Joseph',
+    role: 'Arthroscopy & Joint Replacement Specialist',
+    category: 'PMR',
+    bio: 'Arthroscopic surgery · Joint replacement · Post-surgical rehabilitation · Sports injuries · Orthopaedic care',
+    img: null,
+  },
 ];
 
 const initialPmrMainServices = [
   {
     id: 'pmr-1',
-    title: "PMR Clinic",
+    title: "Interventional Pain Management",
     icon: <Activity className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Treating musculoskeletal, neurological, and cardiovascular ailments with minimally invasive techniques.",
-    description: "Physical Medicine and Rehabilitation, also known as Physiatry, is a specialty of Modern Medicine that assists patients who have disabilities caused by pain, paralysis, functional limitations (cardio-pulmonary) or limb loss. Physiatrists treat patients with musculoskeletal, neurological, rheumatological (joint-related), pulmonary, and cardiovascular system ailments and are trained to perform minimally invasive pain and spasticity operations such as neurolysis, intra-articular/spinal injection techniques, and wound and contracture management surgeries. To deliver comprehensive, cutting-edge, and cost-effective rehabilitation, Physiatrists are trained to deliver the best therapeutic interventions using evidence-based research and technological innovations.",
+    shortDesc: "Target-specific, non-surgical relief for chronic pain, spine conditions and musculoskeletal disorders.",
+    description: "Le Regain PMR Clinic specialises in physiatrist-led, non-surgical pain management. Conditions treated include chronic back pain, sciatica, neck pain, herniated discs, joint pain and soft-tissue disorders. The approach combines precise diagnosis with ultrasound-guided interventional procedures, trigger point treatments and structured follow-up rehabilitation — addressing the root cause rather than masking symptoms.",
     image: "https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-2',
-    title: "Sports Medicine",
+    title: "Sports Medicine & Orthopaedic Rehab",
     icon: <Heart className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Treatment and prevention of injuries related to sports and exercise.",
-    description: "Sports medicine is a branch of medicine that deals with physical fitness and the treatment and prevention of injuries related to sports and exercise. Sports Medicine is all about preventing and treating injuries and conditions so that you can begin or return, to the “Sports and Physical activities” you love, whether your “Activity” is professional, recreational or just a walk with your children. The goal is to allow you to reach your desired level of activity as quickly as possible by optimizing musculoskeletal function, minimizing pain, and addressing your orthopaedic, nutritional, pulmonary & cardiovascular health and well-being.",
+    shortDesc: "Specialised care for athletic injuries, ligament sprains, muscle strains and post-surgical rehabilitation.",
+    description: "Our sports medicine team provides comprehensive care for athletes and active individuals. Services cover sports injury diagnosis, return-to-play progression, ligament and tendon rehabilitation, post-fracture recovery, joint replacement rehabilitation, and strength and conditioning programs. The goal is restoring function, performance and confidence — without rushing to surgery.",
     image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-3',
-    title: "Physical Therapy",
+    title: "Advanced Physiotherapy",
     icon: <User className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Remediation of impairments and promotion of mobility, functional ability, and quality of life.",
-    description: "Physical Therapy /Physiotherapy (PT) is a healthcare profession primarily concerned with the remediation of impairments and disabilities and the promotion of mobility, functional ability, quality of life and movement potential. These are done through examination, evaluation, diagnosis and physical therapy interventions. Physical therapy helps the patient restore the use of muscles, bones, and the nervous system using various physical modalities and other techniques. It seeks to relieve pain, improve strength and mobility, and train the patient to perform important everyday tasks. Physical therapy is prescribed to rehabilitate a patient after orthopaedic injuries, arthritis, cardiac disease, cervical and lumbar dysfunction, neurological problems, pulmonary disease, spinal cord injuries, stroke, traumatic brain injuries, burns, cancer, amputations and other injuries/illnesses. In addition to clinical practice, other activities encompassed in the physical therapy profession include research, education, consultation, and administration.",
+    shortDesc: "Customised physical therapy using manual therapy, electrotherapy modalities and therapeutic exercises.",
+    description: "Our physiotherapy programs are built around measurable functional goals. Treatment combines manual therapy, therapeutic exercise, modern electrotherapy modalities, mobility training, posture correction and gait retraining. Services are available at both the Vyttila Hub and the Le Regain Physiotherapy Centre in Edappally, ensuring accessible continuity of care.",
     image: "https://images.unsplash.com/photo-1594824436998-d58593aecf4a?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-4',
-    title: "Occupational Therapy",
+    title: "Regenerative Medicine",
     icon: <CheckCircle className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Assisting people in pursuing their interests through therapeutic activities.",
-    description: "Occupational Therapy (OT) involves the use of assessment and interventions to develop, recover or maintain a person’s ability to perform an activity which carries a purpose and meaning for the patient. Occupational therapy is significant as it assists people in pursuing their interests through therapeutic activities. It aids in dealing with daily activity requirements. It assists in the development of personality, which in turn facilitate and encourage the development of self-esteem and confidence. Occupational therapy involves evaluating a person’s physical, psychological, and social abilities in order to obtain the desired results. An appropriate intervention therapy is planned in order to increase the person’s ability to repair and do daily tasks such as feeding, brushing, clothing, playing, socialising, and so on. Leʹ Regain’s occupational therapy assessment, in other words, is a thorough examination of a person’s daily activities, handwriting, cognitive, perceptual, visual-motor, oral-motor skills, sensory processing, social, emotional, and functional behavioural abilities. The goal is to enhance a person’s capability to perform his/her roles and responsibilities in a desired and satisfactory manner.",
+    shortDesc: "Ultrasound-guided PRP injections for joint osteoarthritis, tendinopathies and soft-tissue healing.",
+    description: "Regenerative medicine at Le Regain uses image-guided procedures to support natural tissue healing. Ultrasound-guided Platelet-Rich Plasma (PRP) therapy is applied for joint osteoarthritis, tendinopathies, ligament injuries and soft-tissue conditions. Each procedure is linked to a structured rehabilitation plan and outcome tracking to ensure measurable functional improvement.",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-5',
-    title: "Speech & Language Therapy",
+    title: "Specialised Rehabilitation",
     icon: <MessageCircle className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Therapy for speech, language, communication disorders, and swallowing difficulties.",
-    description: "Speech and language Therapy (SLT) is for both children and adults who have speech, language and communication disorders as well as swallowing difficulties. These issues might emerge as a result of congenital or acquired neurological disorders such as stroke, head injury, cerebral palsy among others. Leʹ Regain’s speech therapy programme begins with an assessment of person’s speech as well as communication skills and related conditions by a Speech & Language Pathologist (SLP). Based on this examination, the SLP develops individualized therapy plans. Common objectives may include increasing receptive and expressive language skills, deciding on other modes of communication, improving speech and swallowing skills with the help of different approaches or technology.",
+    shortDesc: "Comprehensive neurorehabilitation, occupational therapy, speech therapy and paediatric rehabilitation.",
+    description: "Our multidisciplinary rehabilitation team delivers specialist programs for neurological conditions including stroke recovery, spinal cord injury, traumatic brain injury and Parkinsonism. The team also provides occupational therapy for daily living skills and independence, speech and swallow therapy for communication and dysphagia, and paediatric rehabilitation for developmental and functional needs.",
     image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200"
   }
 ];
@@ -100,26 +126,34 @@ const rehabSubServices = [
 const initialSkinServices = [
   {
     id: 'skin-1',
-    title: "Skin Care Treatment",
+    title: "Clinical Dermatology",
     icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
-    shortDesc: "Hydrate, repair, and rejuvenate your skin for a smooth, radiant, and healthy appearance.",
-    description: "Hydrate, repair, and rejuvenate your skin for a smooth, radiant, and healthy appearance. Our expert dermatologists use cutting-edge technology and tailored treatments to address acne, aging, pigmentation, and overall skin health.",
+    shortDesc: "Expert management of chronic acne, acne scar revision, hyperpigmentation and complex skin concerns.",
+    description: "Le Regain Hair & Skin Clinic provides advanced clinical dermatology led by Dr. Joshy Joseph A., Dr. Shahna Mubarak M. and Dr. Minnu Jayesh. We focus on precise diagnosis and long-term results rather than temporary cosmetic fixes. Treatment covers chronic acne and acne scar revision, hyperpigmentation correction, melasma, sensitive skin and barrier repair, rashes, eczema, psoriasis and dermatosurgery support — using FDA-approved technologies and premium formulations.",
     image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'skin-2',
-    title: "Hair Care Treatment",
+    title: "Advanced Medical Facials",
     icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
-    shortDesc: "Strengthen, nourish, and revive your hair for a healthier, shinier, and more vibrant look.",
-    description: "Strengthen, nourish, and revive your hair for a healthier, shinier, and more vibrant look. We offer comprehensive solutions for hair loss, scalp health, and aesthetic restoration using the latest medical advancements.",
-    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1200"
+    shortDesc: "HydraFacials, medical-grade chemical peels and Kerala's first signature Cryo Facial for skin rejuvenation.",
+    description: "Our dermatologist-guided facial treatments are designed for skin health, glow, hydration, resurfacing and recovery. The range includes deep-cleansing HydraFacials, medical-grade chemical peels, Kerala's first signature Cryo Facial for a cooling glow lift, brightening protocols, oil-control facials, anti-ageing medical facials, barrier-restoring facials and event-ready skin preparation.",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'skin-3',
-    title: "Beauty Consultation",
+    title: "Trichology & Hair Restoration",
     icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
-    shortDesc: "Personalized guidance to help you choose the right treatments for your skin, body, and wellness goals.",
-    description: "Personalized guidance to help you choose the right treatments for your skin, body, and wellness goals. Sit down with our specialists to create a bespoke aesthetic roadmap designed entirely around your unique needs.",
+    shortDesc: "Evidence-based hair loss treatments, specialised scalp care and PRP therapy to stimulate growth.",
+    description: "Our trichology stream covers the full spectrum of hair and scalp care — from hair fall evaluation and scalp inflammation to pattern hair loss management, density planning and medical hair growth support. Treatments include evidence-based hair loss protocols, specialised scalp care, PRP (Platelet-Rich Plasma) therapy for hair thinning, and hair and nutrition counselling as part of the clinic's wider dermatology service model.",
+    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1200"
+  },
+  {
+    id: 'skin-4',
+    title: "Laser & Anti-Ageing Solutions",
+    icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
+    shortDesc: "Precision LHR for all skin types, skin tightening, brightening and glutathione therapies.",
+    description: "Le Regain offers evidence-led laser and device-based procedures for skin texture, tone, scars, rejuvenation and unwanted hair. Treatments include precision Laser Hair Removal (LHR) for all skin types, acne scar laser protocols, pigmentation lasers, skin rejuvenation and tightening, texture and pore refinement, skin-brightening glutathione therapies and doctor-supervised pre- and post-laser care.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200"
   }
 ];
@@ -163,26 +197,7 @@ const initialTestimonials = [
   { id: 'test3', name: "Robert T.", text: "After my stroke, the speech and occupational therapy here gave me my life back. The staff is incredibly patient, skilled, and encouraging.", role: "Rehab Patient", rating: 5, img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" },
 ];
 
-const heroSlides = [
-  {
-    image: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&q=80&w=1920",
-    title: "Welcome to Le Regain",
-    subtitle: "Comprehensive care for your Body, Skin, and Hair under one roof.",
-    button: "Discover Our Services"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1920",
-    title: "Advanced Rehabilitation",
-    subtitle: "State-of-the-art Physical Medicine to help you regain mobility and strength.",
-    button: "Explore PMR Clinic"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920",
-    title: "Aesthetic Excellence",
-    subtitle: "Reveal your natural radiance with our specialized skin and hair treatments.",
-    button: "View Skin Clinic"
-  }
-];
+
 
 
 // --- ADMIN DASHBOARD COMPONENTS ---
@@ -600,8 +615,8 @@ export default function App() {
         {/* Top Bar */}
         <div className={`hidden md:flex justify-between items-center px-8 text-xs font-medium tracking-wide transition-all duration-500 overflow-hidden ${scrolled ? 'h-0 opacity-0 py-0' : 'h-10 opacity-100 py-2.5'} ${isTransparent ? 'bg-white/10 backdrop-blur-md border-b border-white/10 text-white/90' : 'bg-[#737976] text-white'}`}>
           <div className="flex space-x-8">
-            <a href="tel:+15551234567" className="flex items-center hover:text-[#68a69e] transition"><Phone className="w-3.5 h-3.5 mr-2" /> +1 (555) 123-4567</a>
-            <a href="mailto:info@leregain.com" className="flex items-center hover:text-[#68a69e] transition"><Mail className="w-3.5 h-3.5 mr-2" /> info@leregain.com</a>
+            <a href="tel:+918139001122" className="flex items-center hover:text-[#68a69e] transition"><Phone className="w-3.5 h-3.5 mr-2" /> +91 81390 01122</a>
+            <a href="mailto:info@regainpmr.com" className="flex items-center hover:text-[#68a69e] transition"><Mail className="w-3.5 h-3.5 mr-2" /> info@regainpmr.com</a>
           </div>
           <div className="flex space-x-6">
             <span className="flex items-center"><Clock className="w-3.5 h-3.5 mr-2" /> Mon-Sat: 9AM - 8PM</span>
@@ -893,11 +908,11 @@ export default function App() {
               <ul className="space-y-4 sm:space-y-6">
                 <li className="flex items-start group cursor-default">
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mr-3 sm:mr-4 shrink-0 group-hover:bg-[#68a69e]/20 transition-colors"><MapPin className="w-4 h-4 text-[#68a69e]" /></div>
-                  <span className="text-gray-400 text-sm mt-1 leading-relaxed">123 Wellness Avenue,<br/>Health District, NY 10001</span>
+                  <span className="text-gray-400 text-sm mt-1 leading-relaxed">Sid's Arcade, Vyttila, Kochi, Kerala</span>
                 </li>
-                <li className="flex items-center group cursor-pointer" onClick={() => window.location.href="tel:+15551234567"}>
+                <li className="flex items-center group cursor-pointer" onClick={() => window.location.href="tel:+918139001122"}>
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mr-3 sm:mr-4 shrink-0 group-hover:bg-[#68a69e]/20 transition-colors"><Phone className="w-4 h-4 text-[#68a69e]" /></div>
-                  <span className="text-gray-400 text-sm hover:text-white transition-colors">+1 (555) 123-4567</span>
+                  <span className="text-gray-400 text-sm hover:text-white transition-colors">+91 81390 01122</span>
                 </li>
               </ul>
             </div>
@@ -1523,14 +1538,14 @@ function ContactPage() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mr-3 sm:mr-4 shrink-0"><MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-[#68a69e]" /></div>
                     <div>
                       <strong className="block text-gray-900 font-bold mb-1 text-sm sm:text-base">Clinic Address</strong>
-                      <span className="text-gray-600 leading-relaxed text-sm sm:text-base">123 Wellness Avenue,<br/>Health District, NY 10001</span>
+                      <span className="text-gray-600 leading-relaxed text-sm sm:text-base">Sid's Arcade, Vyttila, Kochi, Kerala</span>
                     </div>
                   </li>
                   <li className="flex items-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mr-3 sm:mr-4 shrink-0"><Phone className="w-5 h-5 sm:w-6 sm:h-6 text-[#68a69e]" /></div>
                     <div>
                       <strong className="block text-gray-900 font-bold mb-1 text-sm sm:text-base">Phone Number</strong>
-                      <span className="text-gray-600 text-sm sm:text-base">+1 (555) 123-4567</span>
+                      <span className="text-gray-600 text-sm sm:text-base">+91 81390 01122</span>
                     </div>
                   </li>
                </ul>
@@ -1544,3 +1559,4 @@ function ContactPage() {
     </div>
   );
 }
+

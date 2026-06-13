@@ -27,13 +27,13 @@ const locationCards = [
 
 export default function LocationsView() {
   return (
-    <main id="locations" className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+    <main id="locations" className="bg-[#fafafa] px-4 pb-16 pt-28 sm:px-6 sm:pt-36 lg:px-8">
       <section className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
             Locations
           </p>
-          <h1 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold text-slate-950 sm:text-5xl">
             Two Kochi branches for integrated care and rehabilitation.
           </h1>
           <p className="mt-4 text-sm leading-6 text-slate-600">
@@ -46,7 +46,7 @@ export default function LocationsView() {
             const location = locations[card.id];
 
             return (
-              <article key={card.id} className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm">
+              <article key={card.id} className="rounded-[2rem] border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="flex items-start gap-4">
                   <span
                     className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-white"

@@ -21,9 +21,11 @@ const saturdaySlots = ['09:00', '10:00', '11:00', '12:00', '14:00'];
 
 function getClinicSlots(dateValue) {
   const [year, month, dayOfMonth] = dateValue.split('-').map(Number);
+  // Use UTC noon to avoid any DST-related off-by-one on the day boundary
   const day = new Date(Date.UTC(year, month - 1, dayOfMonth, 12)).getUTCDay();
 
   if (day === 0) {
+    // Sunday — closed
     return [];
   }
 
@@ -43,6 +45,7 @@ function getKochiTimeKey(date) {
   }).format(date);
 }
 
+// GET /api/appointments/slots?date=YYYY-MM-DD&branch=...&clinicType=... (public)
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -56,7 +59,7 @@ export async function GET(request) {
           success: false,
           error: 'Date, branch and clinic type are required.',
         },
-        { status: 401 },
+        { status: 400 },
       );
     }
 
@@ -69,7 +72,7 @@ export async function GET(request) {
           success: false,
           error: 'Invalid date.',
         },
-        { status: 401 },
+        { status: 400 },
       );
     }
 

@@ -15,20 +15,14 @@ import {
 import { BRAND_GREY, BRAND_TEAL } from '@/config/branding';
 import { hairAndSkinClinicServices, pmrClinicServices, team } from '@/data/clinicContent';
 
-const initialPosts = [
-  {
-    id: 'post-pmr-care',
-    title: 'Non-surgical pain care at Le Regain PMR',
-    tag: 'PMR',
-    status: 'Draft',
-  },
-  {
-    id: 'post-cryo-facial',
-    title: "Kerala's first signature Cryo Facial",
-    tag: 'Skin',
-    status: 'Published',
-  },
-];
+const ADMIN_API_KEY = process.env.NEXT_PUBLIC_ADMIN_API_KEY || '';
+
+function authHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${ADMIN_API_KEY}`,
+  };
+}
 
 const initialGalleryQueue = [
   {
@@ -52,7 +46,7 @@ const initialGalleryQueue = [
 ];
 
 export default function AdminDashboard({ adminUser, onLogout }) {
-  const [posts, setPosts] = useState(initialPosts);
+  const [posts, setPosts] = useState([]);
   const [isLoadingBlogs, setIsLoadingBlogs] = useState(true);
   const [blogError, setBlogError] = useState('');
   const [teamRecords, setTeamRecords] = useState(
@@ -136,9 +130,7 @@ export default function AdminDashboard({ adminUser, onLogout }) {
 
       const response = await fetch('/api/admin/blogs', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: authHeaders(),
         body: JSON.stringify(newPost),
       });
 
@@ -161,21 +153,27 @@ export default function AdminDashboard({ adminUser, onLogout }) {
     }
   };
 
-  const togglePostStatus = (postId) => {
-    setPosts((current) =>
-      current.map((post) =>
-        post.id === postId
-          ? {
-              ...post,
-              status: post.status === 'Published' ? 'Draft' : 'Published',
-            }
-          : post,
-      ),
-    );
-  };
-
-  const deletePost = (postId) => {
+  const deletePost = async (postId) => {
+    // Optimistic update — remove immediately, restore on error
+    const previous = posts;
     setPosts((current) => current.filter((post) => post.id !== postId));
+
+    try {
+      const response = await fetch(`/api/admin/blogs?id=${postId}`, {
+        method: 'DELETE',
+        headers: authHeaders(),
+      });
+
+      const payload = await response.json();
+
+      if (!response.ok || !payload.success) {
+        throw new Error(payload.error || 'Unable to delete blog post.');
+      }
+    } catch (error) {
+      // Restore previous state on failure
+      setPosts(previous);
+      setBlogError(error.message || 'Unable to delete blog post.');
+    }
   };
 
   const toggleTeamRecord = (doctorId) => {
@@ -213,7 +211,7 @@ export default function AdminDashboard({ adminUser, onLogout }) {
               Operations Dashboard
             </p>
             <h1 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
-              Welcome, {adminUser?.name || 'Le Regain Admin'}.
+              Welcome, {adminUser?.name || adminUser?.email || 'Le Regain Admin'}.
             </h1>
             <p className="mt-2 text-sm" style={{ color: BRAND_GREY }}>
               Manage blog articles, doctors and gallery intake.
@@ -331,7 +329,7 @@ export default function AdminDashboard({ adminUser, onLogout }) {
             <div className="mt-5 grid gap-3">
               {isLoadingBlogs ? (
                 <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center text-sm font-semibold text-slate-500">
-                  Loading blog posts...
+                  Loading blog posts…
                 </div>
               ) : posts.length === 0 ? (
                 <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center text-sm font-semibold text-slate-500">
@@ -348,23 +346,15 @@ export default function AdminDashboard({ adminUser, onLogout }) {
                       <span
                         className="rounded-full px-3 py-1 text-xs font-semibold"
                         style={{
-                          backgroundColor: post.status === 'Published' ? 'rgba(104, 166, 158, 0.14)' : '#ffffff',
-                          color: post.status === 'Published' ? BRAND_TEAL : BRAND_GREY,
+                          backgroundColor: 'rgba(104, 166, 158, 0.14)',
+                          color: BRAND_TEAL,
                         }}
                       >
-                        {post.status || 'Published'}
+                        Published
                       </span>
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <button
-                      type="button"
-                      onClick={() => togglePostStatus(post.id)}
-                      className="inline-flex h-10 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-slate-50"
-                    >
-                      <CheckCircle2 size={16} aria-hidden="true" />
-                      Toggle
-                    </button>
                     <button
                       type="button"
                       onClick={() => deletePost(post.id)}

@@ -25,6 +25,18 @@ function hasMissingRequiredFields(body) {
   });
 }
 
+function isAuthorized(request) {
+  const authorization = request.headers.get('authorization');
+  const adminApiKey = process.env.ADMIN_API_KEY;
+
+  if (!adminApiKey) {
+    return process.env.NODE_ENV !== 'production';
+  }
+
+  return authorization === `Bearer ${adminApiKey}`;
+}
+
+// POST /api/appointments — create an appointment (public)
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -36,7 +48,7 @@ export async function POST(request) {
           error: 'Missing required appointment fields.',
           requiredFields: requiredAppointmentFields,
         },
-        { status: 401 },
+        { status: 400 },
       );
     }
 
@@ -48,7 +60,7 @@ export async function POST(request) {
           success: false,
           error: 'Invalid appointment date.',
         },
-        { status: 401 },
+        { status: 400 },
       );
     }
 
@@ -60,7 +72,7 @@ export async function POST(request) {
         clinicType: String(body.clinicType).trim(),
         branch: String(body.branch).trim(),
         date: appointmentDate,
-        status: body.status ? String(body.status).trim() : 'pending',
+        status: 'pending',
       },
     });
 
@@ -84,8 +96,19 @@ export async function POST(request) {
   }
 }
 
-export async function GET() {
+// GET /api/appointments — list all appointments (admin only)
+export async function GET(request) {
   try {
+    if (!isAuthorized(request)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Unauthorized.',
+        },
+        { status: 401 },
+      );
+    }
+
     const appointments = await prisma.appointment.findMany({
       orderBy: {
         createdAt: 'desc',

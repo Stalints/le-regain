@@ -64,19 +64,19 @@ export default function GalleryView() {
   );
 
   return (
-    <main id="gallery" className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+    <main id="gallery" className="bg-[#fafafa] px-4 pb-16 pt-28 sm:px-6 sm:pt-36 lg:px-8">
       <section className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               Gallery
             </p>
-            <h1 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            <h1 className="mt-3 text-3xl font-bold text-slate-950 sm:text-5xl">
               A visual look at care environments across Le Regain.
             </h1>
           </div>
 
-          <div className="flex rounded-full border border-slate-200 bg-slate-50 p-1">
+          <div className="flex flex-wrap gap-2 rounded-full border border-slate-200 bg-slate-50 p-1">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -102,7 +102,7 @@ export default function GalleryView() {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filteredItems.map((item) => (
-            <article key={item.id} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+            <article key={item.id} className="group overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
                 <img
                   src={item.image}

@@ -533,11 +533,8 @@ export default function AppointmentModal({ isOpen, onClose }) {
                 <button
                   type="submit"
                   disabled={isSubmitting || !form.preferredTime}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                  style={{
-                    backgroundColor: BRAND_TEAL,
-                    opacity: isSubmitting ? 0.72 : 1,
-                  }}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
+                  style={{ backgroundColor: BRAND_TEAL }}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Request'}
                   <ChevronRight size={17} aria-hidden="true" />

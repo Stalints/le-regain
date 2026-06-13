@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import {
   Activity,
@@ -122,21 +122,66 @@ export default function Footer({ activeView = 'home', setActiveView, onBookAppoi
   };
 
   return (
-    <footer id="contact" className="border-t border-slate-200 bg-slate-950 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <>
+      {/* Newsletter CTA — sits above the footer with breathing room */}
+      <section className="relative z-20 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#15201e]/95 p-7 shadow-2xl backdrop-blur-3xl sm:p-10 md:p-14">
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#68a69e]/20 to-transparent opacity-60" />
+          <div className="relative z-10 flex flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex-1 text-left">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Join the Le Regain Community
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-gray-400 sm:text-base">
+                Subscribe for wellness tips, skin-care updates and priority booking notifications.
+              </p>
+            </div>
+            <form
+              onSubmit={(event) => event.preventDefault()}
+              className="flex w-full shrink-0 flex-col gap-3 sm:flex-row sm:items-center lg:w-auto"
+              role="form"
+            >
+              <label htmlFor="community-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="community-email"
+                type="email"
+                placeholder="Enter your email"
+                className="h-12 w-full rounded-2xl border border-white/10 bg-white/5 px-5 text-sm font-medium text-white outline-none transition-all placeholder:text-gray-500 focus:border-transparent focus:ring-2 focus:ring-[#68a69e] sm:w-72"
+              />
+              <button
+                type="submit"
+                className="inline-flex h-12 shrink-0 items-center justify-center rounded-2xl px-7 text-sm font-bold text-white shadow-lg transition-all hover:bg-white hover:text-[#0a0f0e]"
+                style={{ backgroundColor: BRAND_TEAL }}
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" className="relative overflow-hidden bg-[#0a0f0e] pt-16 text-white">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap font-serif text-[20vw] font-black leading-none text-white/[0.025]">
+          LE REGAIN
+        </div>
+        <div className="pointer-events-none absolute right-0 top-0 h-[32rem] w-[32rem] translate-x-1/3 -translate-y-1/2 rounded-full bg-[#68a69e]/10 blur-[110px]" />
+        <div className="pointer-events-none absolute bottom-0 left-0 h-[28rem] w-[28rem] -translate-x-1/4 translate-y-1/3 rounded-full bg-[#68a69e]/10 blur-[110px]" />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.8fr_1.25fr]">
           <section>
-            <div className="flex items-center gap-3">
-              <span
-                className="flex h-12 w-12 items-center justify-center rounded-full text-white"
-                style={{ backgroundColor: BRAND_TEAL }}
-                aria-hidden="true"
-              >
-                <Sparkles size={22} strokeWidth={2.2} />
-              </span>
-              <div>
-                <p className="text-xl font-semibold">{clinicIdentity.name}</p>
-                <p className="text-sm font-medium text-slate-300">{clinicIdentity.tagline}</p>
+            <div className="inline-block rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur-md">
+              <div className="flex flex-col items-center">
+                <div className="flex items-end gap-0.5">
+                  <span className="leregain-logo mb-[0.42rem] text-2xl italic text-white">Le</span>
+                  <span className="leregain-logo text-5xl font-bold italic leading-none" style={{ color: BRAND_TEAL }}>
+                    Regain
+                  </span>
+                </div>
+                <div className="mt-1 ml-12 rounded-full border border-[#68a69e]/30 bg-[#68a69e]/20 px-4 py-1">
+                  <span className="leregain-logo text-xs uppercase tracking-widest text-white">Hair & Skin Clinic</span>
+                </div>
               </div>
             </div>
 
@@ -274,12 +319,13 @@ export default function Footer({ activeView = 'home', setActiveView, onBookAppoi
 
         <div
           className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between"
-          style={{ color: BRAND_GREY }}
         >
           <p>&copy; {new Date().getFullYear()} {clinicIdentity.fullName}. All rights reserved.</p>
           <p>Vyttila Hub | Edappally Physiotherapy Centre | Kochi, Kerala</p>
         </div>
       </div>
-    </footer>
+      </footer>
+    </>
   );
 }
+

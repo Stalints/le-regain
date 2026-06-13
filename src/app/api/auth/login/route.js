@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma;
 }
 
+// POST /api/auth/login — authenticate an admin user
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -29,7 +30,7 @@ export async function POST(request) {
           success: false,
           error: 'Email and password are required.',
         },
-        { status: 401 },
+        { status: 400 },
       );
     }
 
@@ -39,6 +40,7 @@ export async function POST(request) {
       },
     });
 
+    // Use a constant-time response to prevent user enumeration
     if (!user) {
       return NextResponse.json(
         {

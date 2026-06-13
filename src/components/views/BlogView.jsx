@@ -117,7 +117,7 @@ export default function BlogView() {
     );
 
     return (
-      <main id="blog" className="bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:px-6 lg:px-8">
+      <main id="blog" className="bg-[#fafafa] px-4 pb-16 pt-28 sm:px-6 sm:pt-36 lg:px-8">
         <article className="mx-auto max-w-4xl">
           <button
             type="button"
@@ -128,7 +128,7 @@ export default function BlogView() {
             Back to articles
           </button>
 
-          <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="mt-8 rounded-[2rem] border border-gray-100 bg-white p-6 shadow-sm sm:p-8">
             <span
               className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em]"
               style={{
@@ -157,14 +157,14 @@ export default function BlogView() {
   }
 
   return (
-    <main id="blog" className="bg-gradient-to-b from-slate-50 to-white px-4 py-16 sm:px-6 lg:px-8">
+    <main id="blog" className="bg-[#fafafa] px-4 pb-16 pt-28 sm:px-6 sm:pt-36 lg:px-8">
       <section className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
               Blog
             </p>
-            <h1 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            <h1 className="mt-3 text-3xl font-bold text-slate-950 sm:text-5xl">
               Clear clinical articles across PMR, rehabilitation, skin and aesthetics.
             </h1>
           </div>
@@ -192,7 +192,7 @@ export default function BlogView() {
             const Icon = hasSkinTag ? Sparkles : BookOpen;
 
             return (
-              <article key={article.id} className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <article key={article.id} className="group rounded-[2rem] border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="flex items-start justify-between gap-5">
                   <span
                     className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl"

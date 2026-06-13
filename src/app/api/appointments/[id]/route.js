@@ -18,21 +18,53 @@ if (process.env.NODE_ENV !== 'production') {
 
 const allowedStatuses = new Set(['pending', 'confirmed', 'completed', 'cancelled']);
 
+function isAuthorized(request) {
+  const authorization = request.headers.get('authorization');
+  const adminApiKey = process.env.ADMIN_API_KEY;
+
+  if (!adminApiKey) {
+    return process.env.NODE_ENV !== 'production';
+  }
+
+  return authorization === `Bearer ${adminApiKey}`;
+}
+
+// PATCH /api/appointments/[id] — update appointment status (admin only)
 export async function PATCH(request, { params }) {
   try {
+    if (!isAuthorized(request)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Unauthorized.',
+        },
+        { status: 401 },
+      );
+    }
+
     const resolvedParams = await params;
     const appointmentId = resolvedParams?.id;
     const body = await request.json();
     const status = body?.status ? String(body.status).trim().toLowerCase() : '';
 
-    if (!appointmentId || !allowedStatuses.has(status)) {
+    if (!appointmentId) {
       return NextResponse.json(
         {
           success: false,
-          error: 'Valid appointment id and status are required.',
+          error: 'Appointment id is required.',
+        },
+        { status: 400 },
+      );
+    }
+
+    if (!allowedStatuses.has(status)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Invalid status value.',
           allowedStatuses: Array.from(allowedStatuses),
         },
-        { status: 401 },
+        { status: 400 },
       );
     }
 
@@ -53,6 +85,13 @@ export async function PATCH(request, { params }) {
       { status: 200 },
     );
   } catch (error) {
+    if (error?.code === 'P2025') {
+      return NextResponse.json(
+        { success: false, error: 'Appointment not found.' },
+        { status: 404 },
+      );
+    }
+
     console.error('Appointment PATCH failed:', error);
 
     return NextResponse.json(
