@@ -27,26 +27,26 @@ const heroSlides = [
   {
     id: 'integrated-care',
     eyebrow: 'Integrated Healthcare & Aesthetics',
-    title: 'Medical care for movement, skin, hair and confidence.',
-    body: 'Le Regain brings PMR, rehabilitation, dermatology, trichology and aesthetics into one coordinated Kochi clinic experience.',
+    title: 'Welcome to Le Regain',
+    body: 'An integrated healthcare destination in Kochi, Kerala — Le Regain Hair & Skin Clinic and Le Regain PMR Clinic under one roof at Sid\'s Arcade, Vyttila.',
     image:
       'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=85',
     cta: 'Explore clinics',
   },
   {
     id: 'pmr-rehab',
-    eyebrow: 'PMR & Rehabilitation',
-    title: 'Function-first recovery without rushing to surgery.',
-    body: 'A physiatry-led approach for pain, sports injuries, orthopaedic recovery and advanced rehabilitation.',
+    eyebrow: 'Le Regain PMR Clinic',
+    title: 'Rehabilitation & Pain Management',
+    body: 'Non-surgical interventional pain management, sports medicine, advanced physiotherapy, regenerative medicine, and specialized rehabilitation.',
     image:
       'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1800&q=85',
     cta: 'View PMR care',
   },
   {
     id: 'skin-aesthetics',
-    eyebrow: 'Hair, Skin & Aesthetics',
-    title: 'Clinical dermatology with refined aesthetic precision.',
-    body: "From acne and pigmentation to lasers, trichology and Kerala's first signature Cryo Facial.",
+    eyebrow: 'Le Regain Hair & Skin Clinic',
+    title: 'Core Medical & Aesthetic Services',
+    body: 'Clinical dermatology, advanced medical facials, laser and anti-aging solutions, and trichology with Kerala\'s first Cryo Facial.',
     image:
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1800&q=85',
     cta: 'View skin clinic',
@@ -79,23 +79,23 @@ const testimonials = [
 
 const chooseUsItems = [
   {
-    title: 'Multi-disciplinary panel',
-    body: 'Dermatology, PMR, physiotherapy, rehabilitation and aesthetic medicine work as connected care streams.',
+    title: 'Multidisciplinary Medical Panel',
+    body: 'Direct access to senior medical consultants, dermatologists, and certified physical therapists in one location.',
     icon: Users,
   },
   {
-    title: 'Doctor-led protocols',
-    body: 'Clinical assessment guides each plan before procedures, device treatments or rehabilitation sessions begin.',
+    title: 'Advanced Clinical Infrastructure',
+    body: 'Equipped with cutting-edge medical lasers, cryogenic systems, and state-of-the-art physiotherapy equipment.',
     icon: Stethoscope,
   },
   {
-    title: 'Two Kochi access points',
-    body: 'The Vyttila hub is supported by the Le Regain Physiotherapy Centre in Edappally.',
+    title: 'Bespoke Treatment Pathways',
+    body: "Every treatment plan is systematically tailored to the patient's medical history, lifestyle, and recovery goals.",
     icon: ShieldCheck,
   },
   {
-    title: 'Advanced treatment stack',
-    body: 'Cryo Facial, medical facials, aesthetic lasers, ultrasound-guided PRP and specialized rehab programs.',
+    title: 'Accessible Network',
+    body: 'Seamless continuity of care between our primary hub in Vyttila and our dedicated Le Regain Physiotherapy Centre in Edappally.',
     icon: Award,
   },
 ];
@@ -111,18 +111,18 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
     () => [
       {
         id: 'pmr',
-        title: 'PMR Clinic',
-        subtitle: 'Pain, mobility and rehabilitation medicine',
-        body: `${pmrClinicServices.length} coordinated service groups, including interventional pain management and specialized rehabilitation.`,
+        title: 'Le Regain PMR Clinic',
+        subtitle: 'Physical Medicine & Rehabilitation',
+        body: 'A multidisciplinary center for non-surgical interventional pain management, sports medicine, and comprehensive physical therapy.',
         href: '#pmr-clinic',
         icon: Activity,
         services: pmrClinicServices.slice(0, 4).map((service) => service.title),
       },
       {
         id: 'skin',
-        title: 'Hair & Skin Clinic',
-        subtitle: 'Dermatology, trichology and aesthetics',
-        body: `${hairAndSkinClinicServices.length} clinical service groups, including facials, lasers and Kerala's first signature Cryo Facial.`,
+        title: 'Le Regain Hair & Skin Clinic',
+        subtitle: 'Clinical dermatology & aesthetics',
+        body: 'Advanced clinical dermatology, trichology, and non-invasive medical aesthetics with FDA-approved technologies and Kerala\'s first Cryo Facial.',
         href: '#hair-skin-clinic',
         icon: Sparkles,
         services: hairAndSkinClinicServices.map((service) => service.title),
@@ -344,10 +344,10 @@ export default function HomeView({ onBookAppointment, setActiveView }) {
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: BRAND_TEAL }}>
-                Why choose {clinicIdentity.name}
+                The Le Regain Advantage
               </p>
               <h2 className="mt-3 text-3xl font-bold text-gray-950 sm:text-5xl">
-                A panel built for complete recovery and visible results.
+                Integrated healthcare and aesthetics under one roof.
               </h2>
               <p className="mt-4 text-sm leading-6 text-slate-600">
                 {team.length} care roles across SKIN and PMR streams support medical assessment,

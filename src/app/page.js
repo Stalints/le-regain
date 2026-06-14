@@ -78,40 +78,40 @@ const initialPmrMainServices = [
     id: 'pmr-1',
     title: "Interventional Pain Management",
     icon: <Activity className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Target-specific, non-surgical relief for chronic pain, spine conditions and musculoskeletal disorders.",
-    description: "Le Regain PMR Clinic specialises in physiatrist-led, non-surgical pain management. Conditions treated include chronic back pain, sciatica, neck pain, herniated discs, joint pain and soft-tissue disorders. The approach combines precise diagnosis with ultrasound-guided interventional procedures, trigger point treatments and structured follow-up rehabilitation — addressing the root cause rather than masking symptoms.",
+    shortDesc: "Target-specific, non-surgical relief for chronic back pain, sciatica, neck pain, and herniated discs.",
+    description: "Le Regain PMR Clinic is a multidisciplinary center dedicated to Physical Medicine and Rehabilitation (Physiatry). We specialize in non-surgical interventional pain management, sports medicine, and comprehensive physical therapy to treat the root causes of physical limitations. Our senior medical panel features leading experts, including Dr. K M Mathew (Senior Consultant in PMR), Dr. Sidharth Unnithan (Sports Medicine), Dr. Tisha Ann Babu (Interventional Pain Management), and Dr. Babu Joseph (Arthroscopy & Joint Replacement). Together, they offer an integrated, multimodal approach to help athletes, stroke survivors, and individuals with chronic pain restore strength and independence without invasive surgery.",
     image: "https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-2',
     title: "Sports Medicine & Orthopaedic Rehab",
     icon: <Heart className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Specialised care for athletic injuries, ligament sprains, muscle strains and post-surgical rehabilitation.",
-    description: "Our sports medicine team provides comprehensive care for athletes and active individuals. Services cover sports injury diagnosis, return-to-play progression, ligament and tendon rehabilitation, post-fracture recovery, joint replacement rehabilitation, and strength and conditioning programs. The goal is restoring function, performance and confidence — without rushing to surgery.",
+    shortDesc: "Specialized care for athletic injuries, ligament sprains, muscle strains, and post-surgical rehabilitation.",
+    description: "Specialized care for athletic injuries, ligament sprains, muscle strains, and post-surgical rehabilitation. Our sports medicine specialists deliver structured recovery programs that restore function, performance, and confidence — without rushing to surgery.",
     image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-3',
     title: "Advanced Physiotherapy",
     icon: <User className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Customised physical therapy using manual therapy, electrotherapy modalities and therapeutic exercises.",
-    description: "Our physiotherapy programs are built around measurable functional goals. Treatment combines manual therapy, therapeutic exercise, modern electrotherapy modalities, mobility training, posture correction and gait retraining. Services are available at both the Vyttila Hub and the Le Regain Physiotherapy Centre in Edappally, ensuring accessible continuity of care.",
+    shortDesc: "Customized physical therapy regimens utilizing modern electrotherapy modalities, manual therapy, and therapeutic exercises.",
+    description: "Customized physical therapy regimens utilizing modern electrotherapy modalities, manual therapy, and therapeutic exercises. Services are available at both the Vyttila hub and the Le Regain Physiotherapy Centre in Edappally, ensuring accessible continuity of care.",
     image: "https://images.unsplash.com/photo-1594824436998-d58593aecf4a?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-4',
     title: "Regenerative Medicine",
     icon: <CheckCircle className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Ultrasound-guided PRP injections for joint osteoarthritis, tendinopathies and soft-tissue healing.",
-    description: "Regenerative medicine at Le Regain uses image-guided procedures to support natural tissue healing. Ultrasound-guided Platelet-Rich Plasma (PRP) therapy is applied for joint osteoarthritis, tendinopathies, ligament injuries and soft-tissue conditions. Each procedure is linked to a structured rehabilitation plan and outcome tracking to ensure measurable functional improvement.",
+    shortDesc: "Ultrasound-guided PRP injections for joint osteoarthritis and tendinopathies.",
+    description: "Ultrasound-guided PRP injections for joint osteoarthritis and tendinopathies. Each regenerative procedure is linked to a structured rehabilitation plan to ensure measurable functional improvement.",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'pmr-5',
-    title: "Specialised Rehabilitation",
+    title: "Specialized Rehabilitation",
     icon: <MessageCircle className="w-8 h-8" color={BRAND_TEAL} />,
-    shortDesc: "Comprehensive neurorehabilitation, occupational therapy, speech therapy and paediatric rehabilitation.",
-    description: "Our multidisciplinary rehabilitation team delivers specialist programs for neurological conditions including stroke recovery, spinal cord injury, traumatic brain injury and Parkinsonism. The team also provides occupational therapy for daily living skills and independence, speech and swallow therapy for communication and dysphagia, and paediatric rehabilitation for developmental and functional needs.",
+    shortDesc: "Comprehensive neurorehabilitation for stroke recovery, alongside dedicated occupational therapy, speech therapy, and pediatric rehabilitation.",
+    description: "Comprehensive neurorehabilitation for stroke recovery, alongside dedicated occupational therapy, speech therapy, and pediatric rehabilitation. Our multidisciplinary team delivers specialist programs tailored to neurological, developmental, and functional recovery needs.",
     image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200"
   }
 ];
@@ -129,32 +129,32 @@ const initialSkinServices = [
     id: 'skin-1',
     title: "Clinical Dermatology",
     icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
-    shortDesc: "Expert management of chronic acne, acne scar revision, hyperpigmentation and complex skin concerns.",
-    description: "Le Regain Hair & Skin Clinic provides advanced clinical dermatology led by Dr. Joshy Joseph A., Dr. Shahna Mubarak M. and Dr. Minnu Jayesh. We focus on precise diagnosis and long-term results rather than temporary cosmetic fixes. Treatment covers chronic acne and acne scar revision, hyperpigmentation correction, melasma, sensitive skin and barrier repair, rashes, eczema, psoriasis and dermatosurgery support — using FDA-approved technologies and premium formulations.",
+    shortDesc: "Expert management of chronic acne, acne scar revision, and hyperpigmentation correction.",
+    description: "Le Regain Hair & Skin Clinic provides advanced clinical dermatology, trichology, and non-invasive medical aesthetics. Led by a team of highly qualified skin specialists—including Dr. Joshy Joseph A., Dr. Shahna Mubarak M., and Dr. Minnu Jayesh—we focus on precise diagnosis and long-term results rather than temporary cosmetic fixes. We utilize FDA-approved technologies and premium formulations to ensure the highest standards of safety and efficacy. Expert management of chronic acne, acne scar revision, and hyperpigmentation correction.",
     image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'skin-2',
     title: "Advanced Medical Facials",
     icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
-    shortDesc: "HydraFacials, medical-grade chemical peels and Kerala's first signature Cryo Facial for skin rejuvenation.",
-    description: "Our dermatologist-guided facial treatments are designed for skin health, glow, hydration, resurfacing and recovery. The range includes deep-cleansing HydraFacials, medical-grade chemical peels, Kerala's first signature Cryo Facial for a cooling glow lift, brightening protocols, oil-control facials, anti-ageing medical facials, barrier-restoring facials and event-ready skin preparation.",
+    shortDesc: "Deep-cleansing HydraFacials, medical-grade chemical peels, and signature Cryo Facials for skin rejuvenation.",
+    description: "Deep-cleansing HydraFacials, medical-grade chemical peels, and signature Cryo Facials for skin rejuvenation. Notably, our facility is recognized for pioneering advanced aesthetic care in the region, including introducing Kerala's first Cryo Facial.",
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'skin-3',
     title: "Trichology & Hair Restoration",
     icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
-    shortDesc: "Evidence-based hair loss treatments, specialised scalp care and PRP therapy to stimulate growth.",
-    description: "Our trichology stream covers the full spectrum of hair and scalp care — from hair fall evaluation and scalp inflammation to pattern hair loss management, density planning and medical hair growth support. Treatments include evidence-based hair loss protocols, specialised scalp care, PRP (Platelet-Rich Plasma) therapy for hair thinning, and hair and nutrition counselling as part of the clinic's wider dermatology service model.",
+    shortDesc: "Evidence-based hair loss treatments, specialized scalp care, and PRP (Platelet-Rich Plasma) therapy to counter hair thinning and stimulate growth.",
+    description: "Evidence-based hair loss treatments, specialized scalp care, and PRP (Platelet-Rich Plasma) therapy to counter hair thinning and stimulate growth. Our trichology stream is integrated with dermatologist-led assessment and long-term care planning.",
     image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 'skin-4',
-    title: "Laser & Anti-Ageing Solutions",
+    title: "Laser & Anti-Aging Solutions",
     icon: <Sparkles className="w-10 h-10" color={BRAND_TEAL} />,
-    shortDesc: "Precision LHR for all skin types, skin tightening, brightening and glutathione therapies.",
-    description: "Le Regain offers evidence-led laser and device-based procedures for skin texture, tone, scars, rejuvenation and unwanted hair. Treatments include precision Laser Hair Removal (LHR) for all skin types, acne scar laser protocols, pigmentation lasers, skin rejuvenation and tightening, texture and pore refinement, skin-brightening glutathione therapies and doctor-supervised pre- and post-laser care.",
+    shortDesc: "Precision Laser Hair Removal (LHR) for all skin types, skin tightening, and skin-brightening glutathione therapies.",
+    description: "Precision Laser Hair Removal (LHR) for all skin types, skin tightening, and skin-brightening glutathione therapies. Evidence-led laser and device-based procedures for skin texture, tone, rejuvenation, and unwanted hair.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200"
   }
 ];
@@ -202,19 +202,19 @@ const heroSlides = [
   {
     image: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&q=80&w=1920",
     title: "Welcome to Le Regain",
-    subtitle: "Comprehensive care for your Body, Skin, and Hair under one roof.",
+    subtitle: "Integrated healthcare and aesthetics in Kochi — two specialized divisions under one roof at Sid's Arcade, Vyttila.",
     button: "Discover Our Services"
   },
   {
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1920",
     title: "Advanced Rehabilitation",
-    subtitle: "State-of-the-art Physical Medicine to help you regain mobility and strength.",
+    subtitle: "Non-surgical interventional pain management, sports medicine, and comprehensive physical therapy at Le Regain PMR Clinic.",
     button: "Explore PMR Clinic"
   },
   {
     image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920",
     title: "Aesthetic Excellence",
-    subtitle: "Reveal your natural radiance with our specialized skin and hair treatments.",
+    subtitle: "Advanced clinical dermatology, trichology, and non-invasive medical aesthetics — including Kerala's first Cryo Facial.",
     button: "View Skin Clinic"
   }
 ];
@@ -1001,7 +1001,7 @@ export default function App() {
                  </div>
               </div>
               <p className="text-gray-400 leading-relaxed mb-6 sm:mb-8 font-light text-sm sm:text-base">
-                A premier destination for restorative physical medicine and advanced aesthetic treatments. Blending cutting-edge medical technology with compassionate care.
+                Welcome to Le Regain, an integrated healthcare destination in Kochi, Kerala. Located at Sid's Arcade in Vyttila, our state-of-the-art facility brings together Le Regain Hair & Skin Clinic and Le Regain PMR Clinic under one roof.
               </p>
             </div>
             
@@ -1023,14 +1023,14 @@ export default function App() {
               <ul className="space-y-5 sm:space-y-6">
                 <li>
                   <button onClick={() => navigateTo('SERVICES', {tab: 'PMR'})} className="text-left group block">
-                    <strong className="block text-gray-200 font-semibold mb-1 group-hover:text-[#68a69e] transition-colors text-sm sm:text-base">Physical Medicine & Rehab</strong>
-                    <span className="text-gray-500 text-xs sm:text-sm leading-tight block">Sports medicine, pain management.</span>
+                    <strong className="block text-gray-200 font-semibold mb-1 group-hover:text-[#68a69e] transition-colors text-sm sm:text-base">Le Regain PMR Clinic</strong>
+                    <span className="text-gray-500 text-xs sm:text-sm leading-tight block">Pain management, sports medicine, rehabilitation.</span>
                   </button>
                 </li>
                 <li>
                   <button onClick={() => navigateTo('SERVICES', {tab: 'SKIN'})} className="text-left group block">
-                    <strong className="block text-gray-200 font-semibold mb-1 group-hover:text-[#68a69e] transition-colors text-sm sm:text-base">Hair & Skin Clinic</strong>
-                    <span className="text-gray-500 text-xs sm:text-sm leading-tight block">Advanced dermatology, aesthetics.</span>
+                    <strong className="block text-gray-200 font-semibold mb-1 group-hover:text-[#68a69e] transition-colors text-sm sm:text-base">Le Regain Hair & Skin Clinic</strong>
+                    <span className="text-gray-500 text-xs sm:text-sm leading-tight block">Clinical dermatology, trichology, aesthetics.</span>
                   </button>
                 </li>
               </ul>
@@ -1132,15 +1132,15 @@ function HomePage({ openModal, navigateTo, data }) {
       <section className="py-16 sm:py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="text-xs sm:text-sm font-bold tracking-widest uppercase mb-2 sm:mb-3" style={{ color: BRAND_TEAL }}>Why Choose Le Regain</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 leading-tight">Elevating Standards in <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#68a69e] to-[#4a8079]">Healthcare & Aesthetics</span></h3>
-            <p className="text-base sm:text-lg text-gray-600 px-2">We integrate medical expertise with innovative technology to provide holistic, results-driven care tailored perfectly to you.</p>
+            <h2 className="text-xs sm:text-sm font-bold tracking-widest uppercase mb-2 sm:mb-3" style={{ color: BRAND_TEAL }}>The Le Regain Advantage</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 leading-tight">Integrated Healthcare & <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#68a69e] to-[#4a8079]">Aesthetics</span></h3>
+            <p className="text-base sm:text-lg text-gray-600 px-2">Seamless continuity of care between our primary hub in Vyttila and our dedicated Le Regain Physiotherapy Centre in Edappally.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {[
-              { icon: <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-white" />, title: "Expert Specialists", desc: "Board-certified physiatrists and dermatologists leading your care plan." },
-              { icon: <Award className="w-8 h-8 sm:w-10 sm:h-10 text-white" />, title: "Advanced Tech", desc: "Utilizing state-of-the-art robotic rehab and premium aesthetic lasers." },
-              { icon: <Users className="w-8 h-8 sm:w-10 sm:h-10 text-white" />, title: "Holistic Approach", desc: "Treating the whole person, integrating functional recovery and external radiance." }
+              { icon: <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-white" />, title: "Multidisciplinary Medical Panel", desc: "Direct access to senior medical consultants, dermatologists, and certified physical therapists in one location." },
+              { icon: <Award className="w-8 h-8 sm:w-10 sm:h-10 text-white" />, title: "Advanced Clinical Infrastructure", desc: "Equipped with cutting-edge medical lasers, cryogenic systems, and state-of-the-art physiotherapy equipment." },
+              { icon: <Users className="w-8 h-8 sm:w-10 sm:h-10 text-white" />, title: "Bespoke Treatment Pathways", desc: "Every treatment plan is systematically tailored to the patient's medical history, lifestyle, and recovery goals." }
             ].map((feature, idx) => (
               <div key={idx} className="bg-gray-50 rounded-3xl p-8 sm:p-10 text-center hover:bg-white hover:shadow-2xl transition-all duration-300 group border border-gray-100">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-gradient-to-br from-[#68a69e] to-[#4a8079] rounded-2xl flex items-center justify-center mb-5 sm:mb-6 shadow-lg group-hover:-translate-y-2 transition-transform rotate-3 group-hover:rotate-0">{feature.icon}</div>
@@ -1169,8 +1169,8 @@ function HomePage({ openModal, navigateTo, data }) {
               <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=1200" alt="PMR" className="w-full h-[400px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 sm:p-10">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-4 sm:mb-6"><Activity className="w-6 h-6 sm:w-8 sm:h-8 text-white" /></div>
-                <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Physical Medicine & Rehab</h3>
-                <p className="text-gray-200 text-sm sm:text-lg mb-5 sm:mb-6 line-clamp-2 max-w-md">Expert physiotherapy, sports medicine, and rehabilitation services to restore your mobility.</p>
+                <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Le Regain PMR Clinic</h3>
+                <p className="text-gray-200 text-sm sm:text-lg mb-5 sm:mb-6 line-clamp-2 max-w-md">A multidisciplinary center dedicated to Physical Medicine and Rehabilitation, specializing in non-surgical interventional pain management, sports medicine, and comprehensive physical therapy.</p>
                 <span className="inline-flex items-center text-white font-bold bg-[#68a69e] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full w-max text-sm sm:text-base hover:bg-white hover:text-[#68a69e] transition-colors">Explore Department <ArrowRight className="w-4 h-4 ml-2" /></span>
               </div>
             </div>
@@ -1180,8 +1180,8 @@ function HomePage({ openModal, navigateTo, data }) {
               <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200" alt="Skin Care" className="w-full h-[400px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 sm:p-10">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-4 sm:mb-6"><Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-white" /></div>
-                <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Hair & Skin Clinic</h3>
-                <p className="text-gray-200 text-sm sm:text-lg mb-5 sm:mb-6 line-clamp-2 max-w-md">Advanced dermatological treatments, hair restoration, and bespoke aesthetic consultations.</p>
+                <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Le Regain Hair & Skin Clinic</h3>
+                <p className="text-gray-200 text-sm sm:text-lg mb-5 sm:mb-6 line-clamp-2 max-w-md">Advanced clinical dermatology, trichology, and non-invasive medical aesthetics with FDA-approved technologies and Kerala's first Cryo Facial.</p>
                 <span className="inline-flex items-center text-white font-bold bg-[#737976] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full w-max text-sm sm:text-base hover:bg-white hover:text-[#737976] transition-colors">Explore Department <ArrowRight className="w-4 h-4 ml-2" /></span>
               </div>
             </div>
@@ -1290,7 +1290,7 @@ function HomePage({ openModal, navigateTo, data }) {
         </div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white leading-tight">Ready to Start Your Wellness Journey?</h2>
-          <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-gray-300 font-light px-2 sm:px-0">Whether you need advanced physical rehabilitation or expert aesthetic care, our multidisciplinary team is here for you.</p>
+          <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-gray-300 font-light px-2 sm:px-0">Whether you need advanced physical rehabilitation at Le Regain PMR Clinic or expert dermatology and aesthetics at Le Regain Hair & Skin Clinic, our multidisciplinary team is here for you.</p>
           <button onClick={openModal} className="w-full sm:w-auto bg-[#68a69e] text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg shadow-[0_0_20px_rgba(104,166,158,0.3)] hover:shadow-[0_0_40px_rgba(104,166,158,0.6)] hover:-translate-y-1 transition-all duration-300">
             Book an Appointment Today
           </button>
@@ -1309,12 +1309,12 @@ function ServicesPage({ initialTab = 'PMR', navigateTo, data }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 animate-in slide-in-from-bottom-4">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">Our Services</h1>
-          <p className="text-base sm:text-lg text-gray-600">Select a department below to explore our comprehensive range of specialized medical and aesthetic treatments.</p>
+          <p className="text-base sm:text-lg text-gray-600">Explore Le Regain Hair & Skin Clinic and Le Regain PMR Clinic — two specialized divisions offering evidence-based, non-surgical treatments under one roof in Vyttila, Kochi.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 mb-10 sm:mb-12 animate-in slide-in-from-bottom-8">
-          <button onClick={() => setActiveTab('PMR')} className={`px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold rounded-2xl transition-all flex items-center justify-center ${activeTab === 'PMR' ? 'bg-[#68a69e] text-white shadow-xl sm:scale-105' : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'}`}><Activity className="w-5 h-5 mr-3 shrink-0" /> Physical Medicine & Rehab</button>
-          <button onClick={() => setActiveTab('SKIN')} className={`px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold rounded-2xl transition-all flex items-center justify-center ${activeTab === 'SKIN' ? 'bg-[#737976] text-white shadow-xl sm:scale-105' : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'}`}><Sparkles className="w-5 h-5 mr-3 shrink-0" /> Hair & Skin Clinic</button>
+          <button onClick={() => setActiveTab('PMR')} className={`px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold rounded-2xl transition-all flex items-center justify-center ${activeTab === 'PMR' ? 'bg-[#68a69e] text-white shadow-xl sm:scale-105' : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'}`}><Activity className="w-5 h-5 mr-3 shrink-0" /> Le Regain PMR Clinic</button>
+          <button onClick={() => setActiveTab('SKIN')} className={`px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold rounded-2xl transition-all flex items-center justify-center ${activeTab === 'SKIN' ? 'bg-[#737976] text-white shadow-xl sm:scale-105' : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'}`}><Sparkles className="w-5 h-5 mr-3 shrink-0" /> Le Regain Hair & Skin Clinic</button>
         </div>
 
         <div className="animate-in fade-in duration-500">
@@ -1336,8 +1336,8 @@ function ServicesPage({ initialTab = 'PMR', navigateTo, data }) {
               </div>
               <div className="mt-12 sm:mt-20 pt-10 sm:pt-16 border-t border-gray-200">
                 <div className="text-center mb-8 sm:mb-10">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Rehabilitation Programs</h3>
-                  <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">In addition to our core clinics, we offer an extensive array of specialized rehabilitation programs tailored to unique conditions.</p>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Rehabilitation & Pain Management Solutions</h3>
+                  <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">Non-surgical interventional pain management, sports medicine, advanced physiotherapy, regenerative medicine, and specialized rehabilitation.</p>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-5xl mx-auto">
                   {rehabSubServices.map((item, idx) => (
@@ -1605,17 +1605,17 @@ function AboutPage() {
           <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
             <div>
               <h2 className="text-xs sm:text-sm font-bold tracking-widest uppercase mb-2 sm:mb-3" style={{ color: BRAND_TEAL }}>About Le Regain</h2>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Empowering your health, restoring your confidence.</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Integrated Healthcare & Aesthetics</h1>
             </div>
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed font-light">At Le Regain, our mission is to empower individuals to achieve optimal health, function, and confidence through a uniquely integrated approach.</p>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed font-light">Welcome to Le Regain, an integrated healthcare destination in Kochi, Kerala. Located at Sid's Arcade in Vyttila, our state-of-the-art facility brings together two specialized medical divisions under one roof: Le Regain Hair & Skin Clinic and Le Regain PMR Clinic. By combining advanced clinical dermatology with physical medicine and rehabilitation, we offer a unique, 360-degree approach to wellness. We deliver evidence-based, non-surgical treatments designed to restore your confidence, enhance your mobility, and improve your overall quality of life.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 pt-2 sm:pt-4">
               <div className="bg-gray-50 p-5 sm:p-6 rounded-2xl border border-gray-100">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 flex items-center"><Activity className="w-5 h-5 text-[#68a69e] mr-2 shrink-0"/> Our Mission</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">To provide holistic solutions tailored to each patient's needs, combining Physical Medicine with advanced aesthetics.</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 flex items-center"><Sparkles className="w-5 h-5 text-[#68a69e] mr-2 shrink-0"/> Le Regain Hair & Skin Clinic</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Advanced clinical dermatology, trichology, and non-invasive medical aesthetics led by Dr. Joshy Joseph A., Dr. Shahna Mubarak M., and Dr. Minnu Jayesh — with FDA-approved technologies and Kerala's first Cryo Facial.</p>
               </div>
               <div className="bg-gray-50 p-5 sm:p-6 rounded-2xl border border-gray-100">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 flex items-center"><Star className="w-5 h-5 text-[#68a69e] mr-2 shrink-0"/> Our Vision</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">To be the premier destination for comprehensive care, recognized for innovative therapies and exceptional outcomes.</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 flex items-center"><Activity className="w-5 h-5 text-[#68a69e] mr-2 shrink-0"/> Le Regain PMR Clinic</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">A multidisciplinary center for Physical Medicine and Rehabilitation, led by experts including Dr. K M Mathew, Dr. Sidharth Unnithan, Dr. Tisha Ann Babu, and Dr. Babu Joseph — offering non-surgical pain management and comprehensive rehab.</p>
               </div>
             </div>
           </div>

@@ -24,16 +24,16 @@ export function StrengthsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#68a69e] sm:text-sm">
-            Why Choose Le Regain
+            The Le Regain Advantage
           </p>
           <h2 className="mb-5 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-5xl">
-            Elevating Standards in{' '}
+            Integrated{' '}
             <span className="bg-gradient-to-r from-[#68a69e] to-[#4a8079] bg-clip-text text-transparent">
               Healthcare & Aesthetics
             </span>
           </h2>
           <p className="text-base leading-7 text-gray-600 sm:text-lg">
-            We integrate medical expertise with refined hospitality and technology-led care for calm, confident outcomes.
+            Seamless continuity of care between our primary hub in Vyttila and our dedicated Le Regain Physiotherapy Centre in Edappally.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">

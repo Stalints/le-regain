@@ -54,18 +54,18 @@ export const heroSlides = [
 
 export const strengths = [
   {
-    title: 'Expert Specialists',
-    description: 'Physiatrists, dermatologists, therapists, and aesthetic physicians shaping each care plan.',
+    title: 'Multidisciplinary Medical Panel',
+    description: 'Direct access to senior medical consultants, dermatologists, and certified physical therapists in one location.',
     icon: ShieldCheck,
   },
   {
-    title: 'Advanced Technology',
-    description: 'Modern rehabilitation tools, laser systems, skin protocols, and evidence-led procedures.',
+    title: 'Advanced Clinical Infrastructure',
+    description: 'Equipped with cutting-edge medical lasers, cryogenic systems, and state-of-the-art physiotherapy equipment.',
     icon: Award,
   },
   {
-    title: 'Holistic Approach',
-    description: 'Functional recovery, comfort, confidence, and visible results handled as one journey.',
+    title: 'Bespoke Treatment Pathways',
+    description: "Every treatment plan is systematically tailored to the patient's medical history, lifestyle, and recovery goals.",
     icon: Users,
   },
 ];
@@ -84,9 +84,9 @@ export const services = {
 export const departments = [
   {
     id: 'pmr',
-    kicker: 'Physical Medicine & Rehab',
-    title: 'Physical Medicine & Rehab',
-    description: 'Expert physiotherapy, sports medicine, pain care, and rehabilitation services to restore mobility.',
+    kicker: 'Le Regain PMR Clinic',
+    title: 'Le Regain PMR Clinic',
+    description: 'A multidisciplinary center for Physical Medicine and Rehabilitation, specializing in non-surgical interventional pain management, sports medicine, and comprehensive physical therapy.',
     icon: Activity,
     image:
       'https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=1200',
@@ -95,9 +95,9 @@ export const departments = [
   },
   {
     id: 'skin',
-    kicker: 'Hair & Skin Clinic',
-    title: 'Hair & Skin Clinic',
-    description: 'Advanced dermatology, trichology, laser care, medical facials, and aesthetic consultations.',
+    kicker: 'Le Regain Hair & Skin Clinic',
+    title: 'Le Regain Hair & Skin Clinic',
+    description: 'Advanced clinical dermatology, trichology, and non-invasive medical aesthetics with FDA-approved technologies and Kerala\'s first Cryo Facial.',
     icon: Sparkles,
     image:
       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1200',
