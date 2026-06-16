@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import {
   Activity,
   BookOpen,
@@ -123,14 +124,17 @@ export default function Navbar({
           onClick={() => handleNavigation(navItems[0])}
           className="group flex w-[12.5rem] shrink-0 flex-col items-center justify-center rounded-b-[2rem] bg-white/10 py-3 backdrop-blur-md sm:w-[14.5rem]"
         >
-          <span className="flex items-end leading-none gap-0.5">
-            <span className="leregain-logo mb-[0.35rem] text-lg italic text-white transition-colors xl:text-xl">
-              Le
-            </span>
-            <span className="leregain-logo text-[2.45rem] font-bold italic leading-none text-white transition-transform duration-300 group-hover:scale-[1.03] xl:text-[2.85rem]">
-              Regain
-            </span>
-          </span>
+          <div className="flex items-end gap-0.5">
+            <div className="relative h-12 w-36 transition-transform duration-300 group-hover:scale-[1.02] xl:h-14 xl:w-40">
+              <Image
+                src="/logo-leregain.png"
+                alt="Le Regain"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
           <span className="mt-1 rounded-full border border-white/20 bg-white/20 px-3 py-1 shadow-sm">
             <span className="block text-[9px] font-bold uppercase leading-none tracking-[0.16em] text-white xl:text-[10px]">
               Hair & Skin Clinic

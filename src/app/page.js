@@ -711,8 +711,13 @@ export default function App() {
     return (
     <div className="flex w-[13rem] shrink-0 cursor-pointer flex-col items-center group sm:w-[15rem]" onClick={() => navigateTo('HOME')}>
       <div className="flex items-end gap-0.5">
-        <span className={`text-lg sm:text-xl font-serif italic mb-[0.32rem] transition-colors ${useTransparentLogo ? 'text-white' : 'text-[#737976] group-hover:text-black'}`}>Le</span>
-        <span className={`text-[2.45rem] sm:text-[2.85rem] font-serif font-bold italic leading-none transition-transform group-hover:scale-105 ${useTransparentLogo ? 'text-white' : 'text-[#68a69e]'}`}>Regain</span>
+        <div className="relative h-12 w-36 sm:h-14 sm:w-40 transition-transform duration-300 group-hover:scale-[1.02]">
+          <img
+            src="/logo-leregain.png"
+            alt="Le Regain"
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
       <div className={`mt-0.5 ml-7 sm:ml-10 px-3 sm:px-4 py-0.5 rounded-full flex items-center transition-all shadow-sm group-hover:shadow-md ${useTransparentLogo ? 'bg-white/20 backdrop-blur-md border border-white/20' : 'bg-[#737976]'}`}>
         <span className="text-white text-[9px] sm:text-[11px] tracking-widest uppercase font-serif">Hair & Skin Clinic</span>
