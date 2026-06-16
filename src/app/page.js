@@ -997,8 +997,13 @@ export default function App() {
               <div className="bg-white/5 backdrop-blur-md inline-block p-5 sm:p-6 rounded-3xl mb-6 sm:mb-8 border border-white/10 shadow-xl">
                  <div className="flex flex-col items-center cursor-pointer group" onClick={() => navigateTo('HOME')}>
                    <div className="flex items-end gap-0.5">
-                     <span className="text-2xl sm:text-3xl font-serif italic mb-[0.42rem] text-white">Le</span>
-                     <span className="text-4xl sm:text-5xl font-serif font-bold italic leading-none text-[#68a69e]">Regain</span>
+                     <div className="relative h-16 w-44 sm:h-20 sm:w-52 transition-transform duration-300 group-hover:scale-[1.02]">
+                       <img
+                         src="/logo-leregain.png"
+                         alt="Le Regain"
+                         className="w-full h-full object-contain"
+                       />
+                     </div>
                    </div>
                    <div className="mt-1 ml-8 sm:ml-12 px-3 sm:px-4 py-0.5 sm:py-1 rounded-full flex items-center shadow-sm bg-[#68a69e]/20 border border-[#68a69e]/30">
                      <span className="text-white text-[10px] sm:text-xs tracking-widest uppercase font-serif">Hair & Skin Clinic</span>
