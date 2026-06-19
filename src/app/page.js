@@ -709,18 +709,13 @@ export default function App() {
     const useTransparentLogo = isTransparent && !forceDark;
 
     return (
-    <div className="flex w-[13rem] shrink-0 cursor-pointer flex-col items-center group sm:w-[15rem]" onClick={() => navigateTo('HOME')}>
-      <div className="flex items-end gap-0.5">
-        <div className="relative h-12 w-36 sm:h-14 sm:w-40 transition-transform duration-300 group-hover:scale-[1.02]">
-          <img
-            src="/logo-leregain.png"
-            alt="Le Regain"
-            className="w-full h-full object-contain"
-          />
-        </div>
-      </div>
-      <div className={`mt-0.5 ml-7 sm:ml-10 px-3 sm:px-4 py-0.5 rounded-full flex items-center transition-all shadow-sm group-hover:shadow-md ${useTransparentLogo ? 'bg-white/20 backdrop-blur-md border border-white/20' : 'bg-[#737976]'}`}>
-        <span className="text-white text-[9px] sm:text-[11px] tracking-widest uppercase font-serif">Hair & Skin Clinic</span>
+    <div className="flex shrink-0 cursor-pointer items-center justify-start group ml-0 sm:ml-8" onClick={() => navigateTo('HOME')}>
+      <div className="relative h-14 w-48 sm:h-16 sm:w-56 md:h-18 md:w-64 transition-transform duration-300 group-hover:scale-[1.02]">
+        <img
+          src="/logo-leregain.png"
+          alt="Le Regain"
+          className="w-full h-full object-contain object-left"
+        />
       </div>
     </div>
     );
@@ -734,7 +729,6 @@ export default function App() {
         {/* Top Bar */}
         <div className={`hidden md:flex justify-between items-center px-8 text-xs font-medium tracking-wide transition-all duration-500 overflow-hidden ${scrolled ? 'h-0 opacity-0 py-0' : 'h-10 opacity-100 py-2.5'} ${isTransparent ? 'bg-white/10 backdrop-blur-md border-b border-white/10 text-white/90' : 'bg-[#737976] text-white'}`}>
           <div className="flex space-x-8">
-            <a href="tel:+918139001122" className="flex items-center hover:text-[#68a69e] transition"><Phone className="w-3.5 h-3.5 mr-2" /> +91 81390 01122</a>
             <a href="mailto:info@regainpmr.com" className="flex items-center hover:text-[#68a69e] transition"><Mail className="w-3.5 h-3.5 mr-2" /> info@regainpmr.com</a>
           </div>
           <div className="flex space-x-6">
@@ -995,18 +989,13 @@ export default function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16 sm:mb-20">
             <div className="sm:col-span-2 lg:col-span-4 pr-0 lg:pr-8">
               <div className="bg-white/5 backdrop-blur-md inline-block p-5 sm:p-6 rounded-3xl mb-6 sm:mb-8 border border-white/10 shadow-xl">
-                 <div className="flex flex-col items-center cursor-pointer group" onClick={() => navigateTo('HOME')}>
-                   <div className="flex items-end gap-0.5">
-                     <div className="relative h-16 w-44 sm:h-20 sm:w-52 transition-transform duration-300 group-hover:scale-[1.02]">
-                       <img
-                         src="/logo-leregain.png"
-                         alt="Le Regain"
-                         className="w-full h-full object-contain"
-                       />
-                     </div>
-                   </div>
-                   <div className="mt-1 ml-8 sm:ml-12 px-3 sm:px-4 py-0.5 sm:py-1 rounded-full flex items-center shadow-sm bg-[#68a69e]/20 border border-[#68a69e]/30">
-                     <span className="text-white text-[10px] sm:text-xs tracking-widest uppercase font-serif">Hair & Skin Clinic</span>
+                 <div className="flex items-center cursor-pointer group" onClick={() => navigateTo('HOME')}>
+                   <div className="relative h-16 w-44 sm:h-20 sm:w-52 transition-transform duration-300 group-hover:scale-[1.02]">
+                     <img
+                       src="/logo-leregain.png"
+                       alt="Le Regain"
+                       className="w-full h-full object-contain"
+                     />
                    </div>
                  </div>
               </div>

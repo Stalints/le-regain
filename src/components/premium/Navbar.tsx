@@ -35,10 +35,6 @@ export default function Navbar({ onBook }: NavbarProps) {
         }`}
       >
         <div className="flex items-center gap-8">
-          <a href="tel:+15551234567" className="flex items-center gap-2 transition-colors hover:text-[#68a69e]">
-            <Phone size={14} aria-hidden="true" />
-            +1 (555) 123-4567
-          </a>
           <a href="mailto:info@leregain.com" className="flex items-center gap-2 transition-colors hover:text-[#68a69e]">
             <Mail size={14} aria-hidden="true" />
             info@leregain.com
